@@ -6,7 +6,7 @@ import java.util.concurrent.TimeUnit;
  */
 public class ClassA {
 
-    static int counter = 12;
+    static int counter = 10;
     private final int id;
     private ClassA next;
 

@@ -34,7 +34,6 @@ public class MyProblem {
             thread.start();
         }
 
-
         if (!threadArrayList.get(0).getState().toString().equals("RUNNING")) {
             synchronized (classAList.get(0)) {
                 classAList.get(0).notify();

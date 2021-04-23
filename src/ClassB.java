@@ -23,7 +23,7 @@ public class ClassB implements Runnable {
         counter = 0;
     }
 
-    //Default ClassB constructor
+    //ClassB constructor
     public ClassB() {
     }
 
@@ -35,11 +35,11 @@ public class ClassB implements Runnable {
     @Override
     public void run() {
         try {
-            synchronized (this.getClassA()) {
-                //System.out.println("Class A id: " + classA.getId() + " waiting");
-                this.getClassA().wait();
+            synchronized (classA) {
+                classA.wait();
             }
-            while (getClassA().EnterAndPlay()) {
+            while (classA.EnterAndPlay()) {
+                //System.out.println("Class A id: " + classA.getId() + " waiting");
                 System.out.println("The player " + id + " has made its turn!");
                 counter++;
             }
