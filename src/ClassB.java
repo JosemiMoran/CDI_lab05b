@@ -35,12 +35,10 @@ public class ClassB implements Runnable {
     @Override
     public void run() {
         try {
-            synchronized (classA) {
-                classA.wait();
+            synchronized (getClassA()) {
+                getClassA().wait();
             }
             while (classA.EnterAndPlay()) {
-                //System.out.println("Class A id: " + classA.getId() + " waiting");
-                System.out.println("The player " + id + " has made its turn!");
                 counter++;
             }
         } catch (Exception e) {

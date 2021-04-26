@@ -37,6 +37,7 @@ public class ClassA {
         if (!HaveFinished()) {
             counter--;
             toRet = true;
+            System.out.println("The player " + id + " has made its turn!");
         }
         synchronized (this.getNext()) {
             this.getNext().notify();
