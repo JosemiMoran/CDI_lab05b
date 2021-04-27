@@ -31,12 +31,17 @@ public class MyProblem {
 
         //Starting threads run routine
         for (Thread thread : threadArrayList) {
+            System.out.println("Starting thread " + thread.getName());
             thread.start();
         }
 
+
+        if(!threadArrayList.get(0).getState().toString().equals("RUNNING")){
             synchronized (classAList.get(0)) {
                 classAList.get(0).notify();
             }
+        }
+
 
 
         for (Thread thread : threadArrayList) {
